@@ -9,7 +9,7 @@ hangman = ["_","_","_","_","_"]
 gelöst = ""
 ###funktionen.
 
-#input und so kram.
+#user input
 def programm_start(dasWort, gw, gelöst):
     if gelöst != dasWort:
         gw = str(input()).upper()
