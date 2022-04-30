@@ -1,5 +1,4 @@
-### Das Quiz das die Welt verändert! ###
-from curses.ascii import isalpha
+### Das Quiz das die Welt verändert! ### 
 import re
 
 #Variablen
@@ -18,7 +17,7 @@ def programm_start(dasWort, gw, gelöst):
 
 #Check auf länge und Buchstaben             
 def lettercheck(gw):
-    if len(gw) == 1 and gw.isalpha() == True:        
+    if len(gw) == 1 and re.search(r"[a-zA-Z]+",gw):
         gelöst = buchstabenSuche(gw, dasWort)
         return gelöst
     else:
