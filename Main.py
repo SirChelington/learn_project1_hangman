@@ -1,5 +1,4 @@
 ### Das Quiz das die Welt verändert! ###
-from cgi import test
 import re
 
 # Variablen
@@ -54,6 +53,7 @@ for char in the_word:
         exit()
 
 place_holder = ["_"] * len(the_word)
+
 # User2 beginnt Buchstaben zu raten.
 print(
     f"Guten Tag, das gesuchte Wort hat {len(the_word)} Buchstaben. Viel Spaß beim raten."
