@@ -1,18 +1,17 @@
 ### Das Quiz das die Welt verändert! ###
+from cgi import test
 import re
 
 # Variablen
-the_word = "Kerze".upper()
 guessed_letter = ""
-place_holder = ["_", "_", "_", "_", "_"]
 result = ""
+
 ###funktionen.
 
 # user input
 def program_start(the_word, guessed_letter, result):
-    if result != the_word:
-        guessed_letter = str(input()).upper()
-        return letter_check(guessed_letter)
+    guessed_letter = str(input("Eingabe: ")).upper()
+    return letter_check(guessed_letter)
 
 
 # Check auf länge und Buchstaben
@@ -46,7 +45,20 @@ def user_Preview(guessed_letter, letter_position):
     return result
 
 
-# Ausführung
+# User1 gibt als input das zu erratene Wort ein.
+print("Guten Tag, bitte geben Sie das zu erratene Wort ohne Umlaute ein.")
+the_word = str(input("Lösungswort: ")).upper()
+for char in the_word:
+    if re.search(r"[a-zA-Z]+", char) == None:
+        print("Bitte nur Vokale und Konsonanten verwenden. Keine Umlaute.")
+        exit()
+
+place_holder = ["_"] * len(the_word)
+# User2 beginnt Buchstaben zu raten.
+print(
+    f"Guten Tag, das gesuchte Wort hat {len(the_word)} Buchstaben. Viel Spaß beim raten."
+)
+print("_" * len(the_word))
 while result != the_word:
     result = program_start(the_word, guessed_letter, result)
 else:
