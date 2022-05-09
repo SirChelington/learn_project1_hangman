@@ -48,7 +48,7 @@ def user_Preview(guessed_letter, letter_position):
 print("Guten Tag, bitte geben Sie das zu erratene Wort ohne Umlaute ein.")
 the_word = str(input("Lösungswort: ")).upper()
 for char in the_word:
-    if re.search(r"[a-zA-Z]+", char) == None:
+    if not re.search(r"[a-zA-Z]+", char):
         print("Bitte nur Vokale und Konsonanten verwenden. Keine Umlaute.")
         exit()
 
